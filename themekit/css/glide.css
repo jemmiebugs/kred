@@ -41,7 +41,7 @@ GLIDE SLIDER - GLIDE.CSS
 }
 
 .glide__slide {
-    width: 100%;
+    width: 20%;
     height: 100%;
     flex-shrink: 0;
     cursor: grab;
@@ -101,9 +101,9 @@ GLIDE SLIDER - GLIDE.CSS
     top: 50%;
     margin-top: -15px;
     overflow: hidden;
-    background: none;
+    background: white;
     padding: 0;
-    left: 15px;
+    left: 5px;
     outline: none;
     cursor: pointer;
 }

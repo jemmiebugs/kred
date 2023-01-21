@@ -33,16 +33,34 @@ Table of contents
     font-style: normal;
 }
 
-body, textarea {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+@font-face {
+    font-family: "MTNBrighterSans-Medium";
+    src: url("../fonts/MTNBrighterSans-Medium.eot");
+    src: url("../fonts/MTNBrighterSans-Medium.woff") format("woff");
+    }
+
+@font-face {
+    font-family: "MTNBrighterSans-Bold";
+    src: url("../fonts/MTNBrighterSans-Bold.eot");
+    src: url("../fonts/MTNBrighterSans-Bold.woff") format("woff");
+    }
+
+@font-face {
+    font-family: "MTNBrighterSans-Regular";
+    src: url("../fonts/MTNBrighterSans-Regular.eot");
+    src: url("../fonts/MTNBrighterSans-Regular.woff") format("woff");
+    }
+
+html body, textarea {
+    font-family:  'MTNBrighterSans-Regular,';
+    font-size: 20px;
     line-height: 25px;
     padding: 0;
     margin: 0;
 }
 
 body > #preloader {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -83,13 +101,21 @@ p + p {
 }
 
 h1 {
-    font-size: 35px;
-    line-height: 40px
+    font-size: 34px;
+    line-height: 40px;
+    font-family: "MTNBrighterSans-Bold";
 }
 
 h2 {
-    font-size: 25px;
-    line-height: 30px
+    font-size: 22px;
+    line-height: 30px;
+    font-family: "MTNBrighterSans-Medium";
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "MTNBrighterSans-Medium";
 }
 
 h1 + p, h2 + p, h3 + p, h4 + p, h2 + h4, h1 + h4, h2 + ul.icon-list, h3 + ul.icon-list, p + h3, p + .btn, p + h4, h4 + .btn, h4 + .btn-text, h4 + input, h4 + select, h4 + textarea, p + ul.icon-list,
@@ -169,6 +195,30 @@ p + .btn-text, p + table, p + pre, p + img, img + p, p + .row, .row + p, p + .im
     border-radius: 3px;
 }
 
+.typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+  }
 /* 
 
 # COLORS
@@ -405,6 +455,12 @@ main > section > .container {
     z-index: 0;
 }
 
+.section-slider-1{
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
 section.section-center {
     display: flex;
     align-items: center;
@@ -415,8 +471,8 @@ section.section-center {
     width: 100%;
 }
 
-@media (min-width: 994px) {
-    .section-full-width-right > .container > .row > .col-lg-6:last-child {
+@media (min-width: 992px) {
+    .section-full-width-right > .container > .row > .col-lg-8:last-child {
         position: absolute;
         left: 50%;
     }
@@ -2215,7 +2271,7 @@ BUTTONS - COMPONENT
 
 .btn {
     color: #fff;
-    border-radius: 3px;
+    border-radius: 50px;
     display: inline-block;
     text-decoration: none;
     border-style: solid;
@@ -2225,6 +2281,7 @@ BUTTONS - COMPONENT
     outline: none;
     text-align: center;
     transition: all .5s;
+
 }
 
 .btn-xs {
@@ -2376,7 +2433,7 @@ INPUTS - COMPONENT
 */
 
 .input-text, .input-select, .input-textarea {
-    border-radius: 3px;
+    border-radius: 4px;
     border-style: solid;
     border-width: 1px;
     outline: none;
@@ -3485,6 +3542,7 @@ TABLE - COMPONENT
 
 .table-grid td, .table-grid.table-border tbody tr td:first-child, .table-grid.table-border tbody tr:last-child td {
     padding: 30px;
+    padding-right: 0;
 }
 
 .table-grid td > img {
@@ -3518,7 +3576,7 @@ TABLE - COMPONENT
 
 .table-columns td {
     display: block;
-    padding: 0 30px;
+    padding: 0 60px;
     width: 100%;
 }
 
@@ -5399,7 +5457,7 @@ Extra small devices (portrait phones, less than 576px)
     }
 
     table.table-grid td {
-        padding: 30px 0;
+        padding: 60px 0;
     }
 
     table.table-grid tr:first-child td:first-child {
